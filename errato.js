@@ -1,4 +1,4 @@
-var rnd = function (start, end, inclusive) {
+exports.rnd = function (start, end, inclusive) {
   start = start ? start : 0;
   end = end ? end : 10;
   if (inclusive) {
@@ -7,7 +7,7 @@ var rnd = function (start, end, inclusive) {
   return start + Math.floor(Math.random()*(end-start));
 };
 
-module.exports = {
-  rnd: rnd,
-  rndInclusive: function (start, end) {return rnd(start, end, true);}
+exports.rndInclusive = function (start, end) {
+  return exports.rnd(start, end, true);
 };
+
